@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest a new idea for TOCropViewController
+about: Suggest a new idea for INDCropViewController
 title: ''
 labels: feature
 assignees: TimOliver

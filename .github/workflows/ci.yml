@@ -12,4 +12,4 @@ jobs:
     - name: Run a one-line script
       run: 'bundle install && bundle exec fastlane test'
       env:
-        TEST_SCHEME: "TOCropViewControllerTests"
+        TEST_SCHEME: "INDCropViewControllerTests"

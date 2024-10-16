@@ -1,7 +1,7 @@
 //
-//  CropViewController.h
+//  INDCropScrollView
 //
-//  Copyright 2017-2024 Timothy Oliver. All rights reserved.
+//  Copyright 2015-2024 Timothy Oliver. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -22,12 +22,18 @@
 
 #import <UIKit/UIKit.h>
 
-#import "INDCropViewController.h"
-#import "INDCropView.h"
-#import "INDCropToolbar.h"
-#import "INDCropViewConstants.h"
-#import "UIImage+CropRotate.h"
+NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT double CropViewControllerVersionNumber;
-FOUNDATION_EXPORT const unsigned char CropViewControllerVersionString[];
+/*
+ Subclassing UIScrollView was necessary in order to directly capture
+ touch events that weren't otherwise accessible via UIGestureRecognizer objects.
+ */
+@interface INDCropScrollView : UIScrollView
 
+@property (nullable, nonatomic, copy) void (^touchesBegan)(void);
+@property (nullable, nonatomic, copy) void (^touchesCancelled)(void);
+@property (nullable, nonatomic, copy) void (^touchesEnded)(void);
+
+@end
+
+NS_ASSUME_NONNULL_END

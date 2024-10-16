@@ -1,7 +1,7 @@
 //
-//  CropViewController.h
+//  INDCroppedImageAttributes.m
 //
-//  Copyright 2017-2024 Timothy Oliver. All rights reserved.
+//  Copyright 2015-2024 Timothy Oliver. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -20,14 +20,27 @@
 //  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
 //  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "INDCroppedImageAttributes.h"
 
-#import "INDCropViewController.h"
-#import "INDCropView.h"
-#import "INDCropToolbar.h"
-#import "INDCropViewConstants.h"
-#import "UIImage+CropRotate.h"
+@interface INDCroppedImageAttributes ()
 
-FOUNDATION_EXPORT double CropViewControllerVersionNumber;
-FOUNDATION_EXPORT const unsigned char CropViewControllerVersionString[];
+@property (nonatomic, assign, readwrite) NSInteger angle;
+@property (nonatomic, assign, readwrite) CGRect croppedFrame;
+@property (nonatomic, assign, readwrite) CGSize originalImageSize;
 
+@end
+
+@implementation INDCroppedImageAttributes
+
+- (instancetype)initWithCroppedFrame:(CGRect)croppedFrame angle:(NSInteger)angle originalImageSize:(CGSize)originalSize
+{
+    if (self = [super init]) {
+        _angle = angle;
+        _croppedFrame = croppedFrame;
+        _originalImageSize = originalSize;
+    }
+    
+    return self;
+}
+
+@end

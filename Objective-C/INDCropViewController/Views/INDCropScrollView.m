@@ -1,7 +1,7 @@
 //
-//  CropViewController.h
+//  INDCropScrollView
 //
-//  Copyright 2017-2024 Timothy Oliver. All rights reserved.
+//  Copyright 2015-2024 Timothy Oliver. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -20,14 +20,32 @@
 //  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
 //  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import <UIKit/UIKit.h>
+#import "INDCropScrollView.h"
 
-#import "INDCropViewController.h"
-#import "INDCropView.h"
-#import "INDCropToolbar.h"
-#import "INDCropViewConstants.h"
-#import "UIImage+CropRotate.h"
+@implementation INDCropScrollView
 
-FOUNDATION_EXPORT double CropViewControllerVersionNumber;
-FOUNDATION_EXPORT const unsigned char CropViewControllerVersionString[];
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (self.touchesBegan)
+        self.touchesBegan();
+        
+    [super touchesBegan:touches withEvent:event];
+}
 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (self.touchesEnded)
+        self.touchesEnded();
+    
+    [super touchesEnded:touches withEvent:event];
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    if (self.touchesCancelled)
+        self.touchesCancelled();
+    
+    [super touchesCancelled:touches withEvent:event];
+}
+
+@end

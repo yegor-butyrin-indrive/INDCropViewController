@@ -3,13 +3,13 @@
 import PackageDescription
 
 let package = Package(
-    name: "TOCropViewController",
+    name: "INDCropViewController",
     defaultLocalization: "en",
-    platforms: [.iOS(.v11)],
+    platforms: [.iOS(.v12)],
     products: [
         .library(
-            name: "TOCropViewController",
-            targets: ["TOCropViewController"]
+            name: "INDCropViewController",
+            targets: ["INDCropViewController"]
         ),
         .library(
             name: "CropViewController",
@@ -18,15 +18,15 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "TOCropViewController",
-            path: "Objective-C/TOCropViewController/",
+            name: "INDCropViewController",
+            path: "Objective-C/INDCropViewController/",
 			exclude:["Supporting/Info.plist"],
             resources: [.process("Resources")],
             publicHeadersPath: "include"
         ),
         .target(
             name: "CropViewController",
-            dependencies: ["TOCropViewController"],
+            dependencies: ["INDCropViewController"],
             path: "Swift/CropViewController/",
 			exclude:["Info.plist"],
             sources: ["CropViewController.swift"]

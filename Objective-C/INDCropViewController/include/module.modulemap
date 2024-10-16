@@ -1,0 +1,4 @@
+module INDCropViewController {
+    umbrella ".."
+    export *
+}

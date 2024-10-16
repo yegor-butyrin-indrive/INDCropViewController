@@ -20,24 +20,24 @@
 //  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR
 //  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#if canImport(TOCropViewController)
-import TOCropViewController
+#if canImport(INDCropViewController)
+import INDCropViewController
 #endif
 
 /**
  An enum containing all of the aspect ratio presets that this view controller supports
  */
-public typealias CropViewControllerAspectRatioPreset = TOCropViewControllerAspectRatioPreset
+public typealias CropViewControllerAspectRatioPreset = INDCropViewControllerAspectRatioPreset
 
 /**
  An enum denoting whether the control tool bar is drawn at the top, or the bottom of the screen in portrait mode
  */
-public typealias CropViewControllerToolbarPosition = TOCropViewControllerToolbarPosition
+public typealias CropViewControllerToolbarPosition = INDCropViewControllerToolbarPosition
 
 /**
  The type of cropping style for this view controller (ie a square or a circle cropping region)
  */
-public typealias CropViewCroppingStyle = TOCropViewCroppingStyle
+public typealias CropViewCroppingStyle = INDCropViewCroppingStyle
 
 // ------------------------------------------------
 /// @name Delegate
@@ -88,7 +88,7 @@ public typealias CropViewCroppingStyle = TOCropViewCroppingStyle
 /// @name Class
 // ------------------------------------------------
 
-open class CropViewController: UIViewController, TOCropViewControllerDelegate {
+open class CropViewController: UIViewController, INDCropViewControllerDelegate {
     
     /**
      The original, uncropped image that was passed to this controller.
@@ -231,7 +231,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     }
     
     /**
-     The position of the Toolbar the default value is `TOCropViewControllerToolbarPositionBottom`.
+     The position of the Toolbar the default value is `INDCropViewControllerToolbarPositionBottom`.
      */
     public var toolbarPosition: CropViewControllerToolbarPosition {
         set { toCropViewController.toolbarPosition = newValue }
@@ -302,7 +302,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     /**
      If `showActivitySheetOnDone` is true, then these activity items will
      be supplied to that UIActivityViewController in addition to the
-     `TOActivityCroppedImageProvider` object.
+     `INDActivityCroppedImageProvider` object.
      */
     public var activityItems: [Any]? {
         set { toCropViewController.activityItems = newValue }
@@ -313,7 +313,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      If `showActivitySheetOnDone` is true, then you may specify any
      custom activities your app implements in this array. If your activity requires
      access to the cropping information, it can be accessed in the supplied
-     `TOActivityCroppedImageProvider` object
+     `INDActivityCroppedImageProvider` object
      */
     public var applicationActivities: [UIActivity]? {
         set { toCropViewController.applicationActivities = newValue }
@@ -330,7 +330,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     }
     
     /**
-     An array of `TOCropViewControllerAspectRatioPreset` enum values denoting which
+     An array of `INDCropViewControllerAspectRatioPreset` enum values denoting which
      aspect ratios the crop view controller may display (Default is nil. All are shown)
      */
     public var allowedAspectRatios: [CropViewControllerAspectRatioPreset]? {
@@ -389,14 +389,14 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     /**
      The crop view managed by this view controller.
      */
-    public var cropView: TOCropView {
+    public var cropView: INDCropView {
         return toCropViewController.cropView
     }
     
     /**
      The toolbar managed by this view controller.
      */
-    public var toolbar: TOCropToolbar {
+    public var toolbar: INDCropToolbar {
         return toCropViewController.toolbar
     }
 
@@ -475,10 +475,10 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     }
 
     /**
-     This class internally manages and abstracts access to a `TOCropViewController` instance
+     This class internally manages and abstracts access to a `INDCropViewController` instance
      :nodoc:
      */
-    internal let toCropViewController: TOCropViewController!
+    internal let toCropViewController: INDCropViewController!
     
     /**
      Forward status bar status style changes to the crop view controller
@@ -522,7 +522,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      @param image The image that will be used to crop.
      */
     public init(image: UIImage) {
-        self.toCropViewController = TOCropViewController(image: image)
+        self.toCropViewController = INDCropViewController(image: image)
         super.init(nibName: nil, bundle: nil)
         setUpCropController()
     }
@@ -534,7 +534,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
      @param image The image that will be cropped
      */
     public init(croppingStyle: CropViewCroppingStyle, image: UIImage) {
-        self.toCropViewController = TOCropViewController(croppingStyle: croppingStyle, image: image)
+        self.toCropViewController = INDCropViewController(croppingStyle: croppingStyle, image: image)
         super.init(nibName: nil, bundle: nil)
         setUpCropController()
     }
@@ -566,7 +566,7 @@ open class CropViewController: UIViewController, TOCropViewControllerDelegate {
     }
     
     /**
-    Resets object of TOCropViewController class as if user pressed reset button in the bottom bar themself
+    Resets object of INDCropViewController class as if user pressed reset button in the bottom bar themself
     */
     public func resetCropViewLayout() {
         toCropViewController.resetCropViewLayout()

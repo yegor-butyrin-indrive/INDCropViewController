@@ -1,6 +1,6 @@
 ---
 name: Question
-about: Ask a general question about how to use TOCropViewController
+about: Ask a general question about how to use INDCropViewController
 title: ''
 labels: question
 assignees: TimOliver

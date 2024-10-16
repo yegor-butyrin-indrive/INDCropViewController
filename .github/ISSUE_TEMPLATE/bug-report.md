@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Report a bug you may have found in TOCropViewController
+about: Report a bug you may have found in INDCropViewController
 title: ''
 labels: bug
 assignees: TimOliver

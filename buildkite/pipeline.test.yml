@@ -1,5 +1,5 @@
 env:
-  TEST_SCHEME: "TOCropViewControllerTests"
+  TEST_SCHEME: "INDCropViewControllerTests"
 
 steps:  
   - label: ':fastlane: Run Tests'
